@@ -1,39 +1,73 @@
-**Welcome to your Base44 project** 
+# SPARCMATDH Application
 
-**About**
+## ✅ Overview
+SPARCMATDH is a cross‑platform mobile/​web questionnaire application built with React, Vite, Capacitor, and a TailwindCSS-based UI library.
+The app guides users through a multi‑section survey, collects profile information, and displays personalized results and feedback.
+It runs as a web project and is packaged for Android using Capacitor for native device access.
 
-View and Edit  your app on [Base44.com](http://Base44.com) 
+Key features include:
+- Dynamic question flow with progress tracking
+- User authentication and profile management
+- Feedback dashboard and history of previous responses
+- File upload capability (e.g. images) for profile data
+- Responsive design for desktop and mobile browsers
 
-This project contains everything you need to run your app locally.
+## 🛠 Tech Stack
+- **Frontend:** React (JSX/TSX) with Vite for fast development
+- **Styling:** Tailwind CSS & custom component library under `src/components/ui`
+- **Mobile:** Capacitor (Android project under `android/`)
+- **State & Data:** React context (`hooks/`, `lib/`) and `react-query`
+- **API:** Base44 backend configured via environment variables
 
-**Edit the code in your local development environment**
+## 🚀 Getting Started (Development)
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd SPARCMATDH
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Configure environment:**
+   Create a file named `.env.local` in the project root and add the following variables:
+   ```env
+   VITE_BASE44_APP_ID=your_app_id
+   VITE_BASE44_APP_BASE_URL=https://your-backend-url
+   ```
+   These values connect the frontend to the Base44 backend service.
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:5173](http://localhost:5173) (or the URL shown) to view the app.
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
-
-**Prerequisites:** 
-
-1. Clone the repository using the project's Git URL 
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Create an `.env.local` file and set the right environment variables
-
+### 🧪 Running on Android Emulator or Device
+```bash
+npx cap sync android
+npx cap open android
 ```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
+Build and run the project from Android Studio as usual.
 
-e.g.
-VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
-VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
+## 📁 Project Structure
+```
+src/                  # React source code
+  components/         # UI components and layout
+  pages/              # Top-level route components
+  hooks/              # Custom React hooks
+  lib/                # Helpers, contexts, clients
+  api/                # API wrappers
+  utils/              # TypeScript utility functions
+android/              # Capacitor Android project
+...
 ```
 
-Run the app: `npm run dev`
+## 📦 Building for Production
+- **Web:** `npm run build` generates a `dist/` folder.
+- **Android:** After syncing with Capacitor, open the Android project and run a release build.
 
-**Publish your changes**
+## 📘 Documentation & Support
+- Base44 GitHub integration docs: https://docs.base44.com/Integrations/Using-GitHub
+- Base44 Support: https://app.base44.com/support
 
-Open [Base44.com](http://Base44.com) and click on Publish.
-
-**Docs & Support**
-
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
-
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+> 📝 This README is intended to help new contributors understand the application and get it running locally. Feel free to add any project‑specific notes or diagrams as needed.
